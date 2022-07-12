@@ -9,18 +9,15 @@
     "columns": [
         {
             "name": "Cedula",
-            "columnIndex": 1,
-            "isStructured": false
+            "columnIndex": 1
         },
         {
             "name": "Nombre",
-            "columnIndex": 2,
-            "isStructured": false
+            "columnIndex": 2
         },
         {
             "name": "Direccion",
-            "columnIndex": 3,
-            "isStructured": false
+            "columnIndex": 3
         },
         {
             "name": "Data",
