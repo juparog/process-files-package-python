@@ -8,8 +8,14 @@ typer = "*"
 pytest = "*"
 colorama = "*"
 shellingham = "*"
+mysql-connector-python = "*"
+pandas = "*"
+xlrd = "*"
+sqlalchemy = "*"
+pymysql = "*"
 
 [dev-packages]
+autopep8 = "*"
 
 [requires]
 python_version = "3.10"

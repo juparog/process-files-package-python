@@ -1,0 +1,33 @@
+{
+    "sheet": {
+        "name": "Hoja1"
+    },
+    "table": {
+        "name": "users",
+        "ifExists": "append"
+    },
+    "columns": [
+        {
+            "name": "Cedula",
+            "columnIndex": 1,
+            "isStructured": false
+        },
+        {
+            "name": "Nombre",
+            "columnIndex": 2,
+            "isStructured": false
+        },
+        {
+            "name": "Direccion",
+            "columnIndex": 3,
+            "isStructured": false
+        },
+        {
+            "name": "Data",
+            "columnIndex": 4,
+            "isStructured": true,
+            "structureFormat": "json",
+            "//hideParentColumn": false
+        }
+    ]
+}
