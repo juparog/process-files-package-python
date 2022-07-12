@@ -6,17 +6,21 @@ __version__ = "0.1.0"
 
 (
     SUCCESS,
-    DIR_ERROR,
-    FILE_ERROR,
-    DB_READ_ERROR,
-    DB_WRITE_ERROR,
-    JSON_ERROR,
-    ID_ERROR,
-) = range(7)
+    VALIDATE_EXTENSION,
+    DB_CONNECT_ERROR,
+    FILE_NOT_FOUND,
+    FILE_PERMISSION,
+    FILE_IS_A_DIRECTORY,
+    WRONG_FORMAT,
+    KEY_ERROR
+) = range(8)
 
 ERRORS = {
-    DIR_ERROR: "config directory error",
-    FILE_ERROR: "config file error",
-    DB_READ_ERROR: "database read error",
-    DB_WRITE_ERROR: "database write error"
+    VALIDATE_EXTENSION: "The spec file must have a '.json' extension",
+    DB_CONNECT_ERROR: "Database connection could not be established.",
+    FILE_NOT_FOUND: "File not found!",
+    FILE_PERMISSION: "Insufficient permission",
+    FILE_IS_A_DIRECTORY: "File is a directory!",
+    WRONG_FORMAT: "The content of the file is incorrectly formatted",
+    KEY_ERROR: "The key '{}' not found in spec file"
 }

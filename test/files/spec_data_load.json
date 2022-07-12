@@ -1,0 +1,29 @@
+{
+    "sheet": {
+        "name": "Hoja1"
+    },
+    "columns": [
+        {
+            "name": "Cedula",
+            "positionInFile": 1,
+            "isStructured": false
+        },
+        {
+            "name": "Nombre",
+            "positionInFile": 1,
+            "isStructured": false
+        },
+        {
+            "name": "Direccion",
+            "positionInFile": 1,
+            "isStructured": false
+        },
+        {
+            "name": "Data",
+            "positionInFile": 1,
+            "isStructured": true,
+            "structureFormat": "json",
+            "structure": [ "Latitude", "Longitude", "City", "Description" ]
+        }
+    ]
+}
