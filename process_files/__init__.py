@@ -12,8 +12,11 @@ __version__ = "0.1.0"
     FILE_PERMISSION,
     FILE_IS_A_DIRECTORY,
     WRONG_FORMAT,
-    KEY_ERROR
-) = range(8)
+    KEY_ERROR,
+    EXTRACT_DATA_ERROR,
+    INSERT_DATA_ERROR,
+    TABLE_NAME_ERROR
+) = range(11)
 
 ERRORS = {
     VALIDATE_EXTENSION: "The spec file must have a '.json' extension",
@@ -22,5 +25,8 @@ ERRORS = {
     FILE_PERMISSION: "Insufficient permission",
     FILE_IS_A_DIRECTORY: "File is a directory!",
     WRONG_FORMAT: "The content of the file is incorrectly formatted",
-    KEY_ERROR: "The key '{}' not found in spec file"
+    KEY_ERROR: "The key '{}' not found in spec file",
+    EXTRACT_DATA_ERROR: "Could not extract data for structured columns",
+    INSERT_DATA_ERROR: "The data could not be inserted, validate if the destination table exists and its layout",
+    TABLE_NAME_ERROR: "The table name is required in the spec file"
 }

@@ -2,28 +2,32 @@
     "sheet": {
         "name": "Hoja1"
     },
+    "table": {
+        "name": "users",
+        "ifExists": "append"
+    },
     "columns": [
         {
             "name": "Cedula",
-            "positionInFile": 1,
+            "columnIndex": 1,
             "isStructured": false
         },
         {
             "name": "Nombre",
-            "positionInFile": 1,
+            "columnIndex": 2,
             "isStructured": false
         },
         {
             "name": "Direccion",
-            "positionInFile": 1,
+            "columnIndex": 3,
             "isStructured": false
         },
         {
             "name": "Data",
-            "positionInFile": 1,
+            "columnIndex": 4,
             "isStructured": true,
             "structureFormat": "json",
-            "structure": [ "Latitude", "Longitude", "City", "Description" ]
+            "//hideParentColumn": false
         }
     ]
 }

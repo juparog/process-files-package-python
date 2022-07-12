@@ -3,11 +3,10 @@
 
 from typing import Optional
 import typer
-from process_files.utils import get_value_json, read_excel_file, read_json_file, validate_extension
+from process_files.utils import get_value_json, upload_excel_to_db, read_excel_file, read_json_file, validate_extension
 from process_files import ERRORS, __app_name__, __version__, database
 
 app = typer.Typer()
-
 
 @app.command(name="load_excel_file")
 def load_excel_file(
@@ -52,23 +51,7 @@ def load_excel_file(
         help='Spec file to upload'
     )
 ) -> None:
-    """Connect the database."""
-
-    db_connection = database.connect_database(
-        db_host,
-        db_port,
-        db_user,
-        db_password,
-        db_name
-    )
-
-    # connection database validation
-    if type(db_connection).__name__ != "CMySQLConnection":
-        typer.secho(
-            f'Connecting database failed with "{ERRORS[db_connection]}"',
-            fg=typer.colors.RED,
-        )
-        raise typer.Exit(1)
+    """Upload excel file to database"""
 
     invalid_extension = validate_extension(spec_file, ".json")
     # file extension validation
@@ -106,8 +89,32 @@ def load_excel_file(
         )
         raise typer.Exit(1)
 
-    print("Excel file data:")
-    print(df)
+    engine = database.create_db_engine(
+        db_user,
+        db_password,
+        db_name
+    )
+
+    # connection database validation
+    if type(engine).__name__ != "Engine":
+        typer.secho(
+            f'Creating connectiong database failed with "{ERRORS[engine]}"',
+            fg=typer.colors.RED,
+        )
+        raise typer.Exit(1)
+
+    upload = upload_excel_to_db(df, spec_data, engine)
+    # connection database validation
+    if type(upload).__name__ != "bool":
+        typer.secho(
+            f'Insert data failed with "{ERRORS[upload]}"',
+            fg=typer.colors.RED,
+        )
+        raise typer.Exit(1)
+
+    typer.secho(
+        f"Data upload successful!", fg=typer.colors.GREEN
+    )
 
 def _version_callback(value: bool) -> None:
     if value:
