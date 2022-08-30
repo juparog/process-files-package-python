@@ -1,0 +1,9 @@
+typer
+pytest
+colorama
+shellingham
+mysql-connector-python
+pandas
+xlrd
+sqlalchemy
+pymysql
