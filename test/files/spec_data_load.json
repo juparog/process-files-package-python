@@ -24,7 +24,7 @@
             "columnIndex": 4,
             "isStructured": true,
             "structureFormat": "json",
-            "//hideParentColumn": false
+            "hideParentColumn": false
         }
     ]
 }
